@@ -1,6 +1,6 @@
 {
   "name": "appinsights-module",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "",
   "main": "lib/commonjs/index.js",
   "scripts": {

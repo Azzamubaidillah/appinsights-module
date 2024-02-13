@@ -59,7 +59,7 @@ export function trackUserProfile(
 ) {
    
     appInsights.trackEvent({ 
-        name: "User Profile", 
+        name: "User Login", 
         properties: { 
             name: name,
             email: email,
@@ -81,44 +81,42 @@ export function trackUserProfile(
         } });
 }
 
-export function trackCampaignDetails( 
-    campaignId, 
-    campaignName,
-    campaignTitle,
-    campaignType,
-    campaignUrl,
-    campaignDescription,
-    campaignCategory,
-    campaignStartDate,
-    campaignEndDate,
-    campaignImage
-     ) {
-    appInsights.trackEvent({ 
-        name: "Campaign Details", 
-        properties: { 
-            campaignID: campaignId, 
-            campaignName: campaignName,
-            campaignTitle: campaignTitle,
-            campaignType: campaignType,
-            campaignUrl: campaignUrl,
-            campaignDescription: campaignDescription,
-            campaignCategory: campaignCategory,
-            campaignStartDate: campaignStartDate,
-            campaignEndDate: campaignEndDate,
-            campaignImage: campaignImage
-          } });
-} 
-
-export function trackPopUpClose () {
-    appInsights.trackEvent({ name: "Pop Up Close" })
+export function trackSliderDetail( campaignTitle, campaignType, campaignMdId, campaignImage, campaignUrl, campaignReference) {
+    appInsights.trackEvent({ name: "User OPEN Slider Detail", properties: { 
+        campaignTitle: campaignTitle,
+        campaignType: campaignType,
+        campaignMdId: campaignMdId,
+        campaignBannerType: "Slider",
+        campaignImage: campaignImage,
+        campaignUrl: campaignUrl,
+        campaignReference: campaignReference
+        
+    } })
 }
 
-export function trackPopUpClick () {
-    appInsights.trackEvent({ name: "Pop Up Click" })
+export function trackBannerDetail( campaignTitle, campaignType, campaignMdId, campaignImage, campaignUrl, campaignReference) {
+    appInsights.trackEvent({ name: "User OPEN Banner Detail", properties: {
+        campaignTitle: campaignTitle,
+        campaignType: campaignType,
+        campaignMdId: campaignMdId,
+        campaignBannerType: "Banner",
+        campaignImage: campaignImage,
+        campaignUrl: campaignUrl,
+        campaignReference: campaignReference
+    } })
+
 }
 
-export function trackPopUpView () {
-    appInsights.trackEvent({ name: "Pop Up View" })
+export function trackBannerClose( campaignTitle, campaignType, campaignMdId, campaignImage, campaignUrl, campaignReference) {
+    appInsights.trackEvent({ name: "User CLOSE Banner", properties: {
+        campaignTitle: campaignTitle,
+        campaignType: campaignType,
+        campaignMdId: campaignMdId,
+        campaignBannerType: "Banner",
+        campaignImage: campaignImage,
+        campaignUrl: campaignUrl,
+        campaignReference: campaignReference
+    } })
 }
 
 export function trackVoucherRedeem ( voucherCode ) {

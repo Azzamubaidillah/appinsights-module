@@ -50,44 +50,34 @@ Track user profiles with the trackUserProfile function.
 ```bash
 import { trackUserProfile } from 'appinsights-module';
 
-trackUserProfile(
-    'John Doe',
-    'john@example.com',
-    '123456789',
-    'Jakarta',
-    'Central Jakarta',
-    'Karet Tengsin',
-    'Tanah Abang',
-    'Male',
-    '123 Main St',
-    'Bachelor\'s Degree',
-    'Non-religious',
-    'Reading, Hiking',
-    'iOS Developer',
-    'Jakarta',
-    '5000',
-    'REF123',
-    '100'
+trackUserProfile( 
+    'John Doe', 'john@example.com', '123456789', 'Jakarta', 'Central Jakarta', 'Karet Tengsin',
+    'Tanah Abang', 'Male', '123 Main St', 'Bachelor\'s Degree', 'Non-religious', 'Reading, Hiking',
+    'iOS Developer', 'Jakarta', '5000', 'REF123', '100'
 );
 
 ```
 
 #### Tracking Campaign Details
 
-Track campaign details with the trackCampaignDetails function.
+Track campaign details with the trackSliderDetail, trackBannerDetail, and trackBannerClose functions.
 
 ```bash
 
-import { trackPopUpClose, trackPopUpClick, trackPopUpView } from 'appinsights-module';
+import { 
+    trackSliderDetail,
+    trackBannerDetail,
+    trackBannerClose
+} from 'appinsights-module';
 
-// Track pop-up close event
-trackPopUpClose();
+// Track slider detail event
+trackSliderDetail('CampaignTitle', 'Slider', '123', 'image.jpg', 'https://example.com', 'REF456');
 
-// Track pop-up click event
-trackPopUpClick();
+// Track banner detail event
+trackBannerDetail('CampaignTitle', 'Banner', '456', 'banner.jpg', 'https://example.com/banner', 'REF789');
 
-// Track pop-up view event
-trackPopUpView();
+// Track banner close event
+trackBannerClose('CampaignTitle', 'Banner', '789', 'banner.jpg', 'https://example.com/banner', 'REF012');
 
 ```
 
